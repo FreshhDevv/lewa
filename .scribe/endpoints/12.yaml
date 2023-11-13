@@ -1,0 +1,195 @@
+name: 'Student Courses Endpoints'
+description: |-
+
+
+  API endpoints for student courses
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: 'api/student-courses/{id}'
+    metadata:
+      groupName: 'Student Courses Endpoints'
+      groupDescription: |-
+
+
+        API endpoints for student courses
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the student course.'
+        required: true
+        example: error
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: error
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/student-courses/{id}'
+    metadata:
+      groupName: 'Student Courses Endpoints'
+      groupDescription: |-
+
+
+        API endpoints for student courses
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the student course.'
+        required: true
+        example: quas
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: quas
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      courseId:
+        name: courseId
+        description: ''
+        required: true
+        example: 18
+        type: integer
+        custom: []
+      semesterId:
+        name: semesterId
+        description: ''
+        required: true
+        example: 2
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      courseId: 18
+      semesterId: 2
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/student-courses/update/{id}'
+    metadata:
+      groupName: 'Student Courses Endpoints'
+      groupDescription: |-
+
+
+        API endpoints for student courses
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the update.'
+        required: true
+        example: hic
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: hic
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/student-courses/{id}'
+    metadata:
+      groupName: 'Student Courses Endpoints'
+      groupDescription: |-
+
+
+        API endpoints for student courses
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the student course.'
+        required: true
+        example: error
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: error
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

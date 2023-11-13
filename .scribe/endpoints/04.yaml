@@ -1,0 +1,423 @@
+name: Courses
+description: |-
+
+
+  API endpoints for courses
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/courses
+    metadata:
+      groupName: Courses
+      groupDescription: |-
+
+
+        API endpoints for courses
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Retrieve the list of courses.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: 'Bearer {token} required A valid Sanctum token.'
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "id": 1,
+               "facultyId": 1,
+               "userId": 4,
+               "semesterId": 1,
+               "name": "ANALYSIS",
+               "courseCode": "CEF 201",
+               "level": "200",
+               "status": "compulsory",
+               "creditValue": 4,
+               "created_at": "2023-07-12T21:26:29.000000Z",
+               "updated_at": "2023-07-12T21:26:29.000000Z",
+               "lecturer": {
+                   "id": 4,
+                   "firstName": "Dr",
+                   "lastName": "Chrome",
+                   "email": "chrome@gmail.com",
+                   "profilePicture": null,
+                   "status": "active",
+                   "created_at": "2023-07-12T21:26:29.000000Z",
+                   "updated_at": "2023-07-12T21:26:29.000000Z"
+               },
+               "faculty": {
+                   "id": 1,
+                   "name": "Faculty of Engineering",
+                   "created_at": "2023-07-12T21:26:29.000000Z",
+                   "updated_at": "2023-07-12T21:26:29.000000Z"
+               }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 401
+        content: |-
+          {
+               "message": "Unauthenticated."
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/courses
+    metadata:
+      groupName: Courses
+      groupDescription: |-
+
+
+        API endpoints for courses
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      facultyId:
+        name: facultyId
+        description: ''
+        required: true
+        example: 12
+        type: integer
+        custom: []
+      userId:
+        name: userId
+        description: ''
+        required: true
+        example: ratione
+        type: string
+        custom: []
+      semesterId:
+        name: semesterId
+        description: ''
+        required: true
+        example: 14
+        type: integer
+        custom: []
+      name:
+        name: name
+        description: ''
+        required: true
+        example: laborum
+        type: string
+        custom: []
+      courseCode:
+        name: courseCode
+        description: ''
+        required: true
+        example: aut
+        type: string
+        custom: []
+      level:
+        name: level
+        description: ''
+        required: true
+        example: 9
+        type: integer
+        custom: []
+      status:
+        name: status
+        description: ''
+        required: true
+        example: tempore
+        type: string
+        custom: []
+      creditValue:
+        name: creditValue
+        description: ''
+        required: true
+        example: 11
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      facultyId: 12
+      userId: ratione
+      semesterId: 14
+      name: laborum
+      courseCode: aut
+      level: 9
+      status: tempore
+      creditValue: 11
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/courses/show/{id}'
+    metadata:
+      groupName: Courses
+      groupDescription: |-
+
+
+        API endpoints for courses
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display the specified course.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: 'Bearer {token} required A valid Sanctum token.'
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the course to display.'
+        required: true
+        example: 2
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+               "id": 1,
+               "facultyId": 1,
+               "userId": 4,
+               "semesterId": 1,
+               "name": "ANALYSIS",
+               "courseCode": "CEF 201",
+               "level": "200",
+               "status": "compulsory",
+               "creditValue": 4,
+               "created_at": "2023-07-12T21:26:29.000000Z",
+               "updated_at": "2023-07-12T21:26:29.000000Z",
+               "user": {
+                   "id": 4,
+                   "firstName": "Dr",
+                   "lastName": "Chrome",
+                   "email": "chrome@gmail.com",
+                   "profilePicture": null,
+                   "status": "active",
+                   "created_at": "2023-07-12T21:26:29.000000Z",
+                   "updated_at": "2023-07-12T21:26:29.000000Z"
+               },
+               "faculty": {
+                   "id": 1,
+                   "name": "Faculty of Engineering",
+                   "created_at": "2023-07-12T21:26:29.000000Z",
+                   "updated_at": "2023-07-12T21:26:29.000000Z"
+               }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 401
+        content: |-
+          {
+               "message": "Unauthenticated."
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/courses/update/{id}'
+    metadata:
+      groupName: Courses
+      groupDescription: |-
+
+
+        API endpoints for courses
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the update.'
+        required: true
+        example: illum
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: illum
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      facultyId:
+        name: facultyId
+        description: ''
+        required: true
+        example: 15
+        type: integer
+        custom: []
+      userId:
+        name: userId
+        description: ''
+        required: true
+        example: et
+        type: string
+        custom: []
+      semesterId:
+        name: semesterId
+        description: ''
+        required: true
+        example: 18
+        type: integer
+        custom: []
+      name:
+        name: name
+        description: ''
+        required: true
+        example: non
+        type: string
+        custom: []
+      courseCode:
+        name: courseCode
+        description: ''
+        required: true
+        example: molestias
+        type: string
+        custom: []
+      level:
+        name: level
+        description: ''
+        required: true
+        example: 20
+        type: integer
+        custom: []
+      status:
+        name: status
+        description: ''
+        required: true
+        example: laboriosam
+        type: string
+        custom: []
+      creditValue:
+        name: creditValue
+        description: ''
+        required: true
+        example: 15
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      facultyId: 15
+      userId: et
+      semesterId: 18
+      name: non
+      courseCode: molestias
+      level: 20
+      status: laboriosam
+      creditValue: 15
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/courses/{id}'
+    metadata:
+      groupName: Courses
+      groupDescription: |-
+
+
+        API endpoints for courses
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete a course by ID.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: 'Bearer {token} required A valid Sanctum token.'
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the course to delete.'
+        required: true
+        example: 18
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 18
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+            "message": "Course Deleted Successfully"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

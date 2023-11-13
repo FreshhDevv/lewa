@@ -1,0 +1,3878 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/faculties:
+    get:
+      summary: 'Display faculties'
+      operationId: displayFaculties
+      description: 'Gets a list of all faculties in the school'
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Admin Activities'
+      security: []
+    post:
+      summary: ''
+      operationId: postApiFaculties
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Admin Activities'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: est
+                code:
+                  type: integer
+                  description: ''
+                  example: 11
+                slug:
+                  type: string
+                  description: ''
+                  example: reiciendis
+                about:
+                  type: string
+                  description: ''
+                  example: quasi
+              required:
+                - name
+                - code
+                - slug
+                - about
+      security: []
+  '/api/faculties/show/{id}':
+    get:
+      summary: ''
+      operationId: getApiFacultiesShowId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Admin Activities'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the show.'
+        example: omnis
+        required: true
+        schema:
+          type: string
+  '/api/faculties/update/{id}':
+    post:
+      summary: ''
+      operationId: postApiFacultiesUpdateId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Admin Activities'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: odio
+                code:
+                  type: integer
+                  description: ''
+                  example: 3
+                slug:
+                  type: string
+                  description: ''
+                  example: ut
+                about:
+                  type: string
+                  description: ''
+                  example: molestiae
+              required:
+                - name
+                - code
+                - slug
+                - about
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the update.'
+        example: exercitationem
+        required: true
+        schema:
+          type: string
+  '/api/faculties/{id}':
+    delete:
+      summary: ''
+      operationId: deleteApiFacultiesId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Admin Activities'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the faculty.'
+        example: soluta
+        required: true
+        schema:
+          type: string
+  /api/login:
+    post:
+      summary: Login.
+      operationId: login
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token} required A valid Sanctum token.'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: 'true'
+                  message: 'User logged in successfully.'
+                  user:
+                    id: 5
+                    firstName: Dr
+                    lastName: Gonzo
+                    email: gonzo@gmail.com
+                    profilePicture: null
+                    status: active
+                    created_at: '2023-07-16T07:25:15.000000Z'
+                    updated_at: '2023-07-16T07:25:15.000000Z'
+                  role: coordinator
+                  accessToken: 2|nkdOWNVEkN7098JhvpeCqzxQgA2zV60KgsBhkjjq
+                  tokenType: Bearer
+                properties:
+                  status:
+                    type: string
+                    example: 'true'
+                  message:
+                    type: string
+                    example: 'User logged in successfully.'
+                  user:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 5
+                      firstName:
+                        type: string
+                        example: Dr
+                      lastName:
+                        type: string
+                        example: Gonzo
+                      email:
+                        type: string
+                        example: gonzo@gmail.com
+                      profilePicture:
+                        type: string
+                        example: null
+                      status:
+                        type: string
+                        example: active
+                      created_at:
+                        type: string
+                        example: '2023-07-16T07:25:15.000000Z'
+                      updated_at:
+                        type: string
+                        example: '2023-07-16T07:25:15.000000Z'
+                  role:
+                    type: string
+                    example: coordinator
+                  accessToken:
+                    type: string
+                    example: 2|nkdOWNVEkN7098JhvpeCqzxQgA2zV60KgsBhkjjq
+                  tokenType:
+                    type: string
+                    example: Bearer
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: ''
+                  example: bradford81@example.org
+                password:
+                  type: string
+                  description: ''
+                  example: 'd@p@"9)|S|]>{ISme'
+              required:
+                - email
+                - password
+  /api/auth/logout:
+    get:
+      summary: ''
+      operationId: getApiAuthLogout
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Authentication
+      security: []
+  /api/auth/change-password:
+    post:
+      summary: ''
+      operationId: postApiAuthChangePassword
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                oldPassword:
+                  type: string
+                  description: ''
+                  example: quisquam
+                newPassword:
+                  type: string
+                  description: ''
+                  example: debitis
+              required:
+                - oldPassword
+                - newPassword
+      security: []
+  /api/ca-marks:
+    get:
+      summary: 'Get All CA marks.'
+      operationId: getAllCAMarks
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token} required A valid Sanctum token.'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: 1
+                  studentId: 1
+                  courseId: 1
+                  semesterId: 1
+                  mark: 25
+                  created_at: '2023-07-16T07:30:16.000000Z'
+                  updated_at: '2023-07-16T07:30:16.000000Z'
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  studentId:
+                    type: integer
+                    example: 1
+                  courseId:
+                    type: integer
+                    example: 1
+                  semesterId:
+                    type: integer
+                    example: 1
+                  mark:
+                    type: integer
+                    example: 25
+                  created_at:
+                    type: string
+                    example: '2023-07-16T07:30:16.000000Z'
+                  updated_at:
+                    type: string
+                    example: '2023-07-16T07:30:16.000000Z'
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - CA
+    post:
+      summary: ''
+      operationId: postApiCaMarks
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - CA
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                studentId:
+                  type: integer
+                  description: ''
+                  example: 4
+                courseId:
+                  type: integer
+                  description: ''
+                  example: 14
+                semesterId:
+                  type: integer
+                  description: ''
+                  example: 13
+                mark:
+                  type: integer
+                  description: ''
+                  example: 17
+              required:
+                - studentId
+                - courseId
+                - semesterId
+                - mark
+      security: []
+  '/api/ca-marks/show/{id}':
+    get:
+      summary: ''
+      operationId: getApiCaMarksShowId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - CA
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the show.'
+        example: est
+        required: true
+        schema:
+          type: string
+  '/api/ca-marks/update/{id}':
+    post:
+      summary: ''
+      operationId: postApiCaMarksUpdateId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - CA
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                studentId:
+                  type: integer
+                  description: ''
+                  example: 8
+                courseId:
+                  type: integer
+                  description: ''
+                  example: 7
+                semesterId:
+                  type: integer
+                  description: ''
+                  example: 14
+                mark:
+                  type: integer
+                  description: ''
+                  example: 3
+              required:
+                - studentId
+                - courseId
+                - semesterId
+                - mark
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the update.'
+        example: a
+        required: true
+        schema:
+          type: string
+  '/api/ca-marks/{id}':
+    delete:
+      summary: ''
+      operationId: deleteApiCaMarksId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - CA
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the ca mark.'
+        example: quia
+        required: true
+        schema:
+          type: string
+  /api/ca-marks/bulk-upload:
+    post:
+      summary: 'Bulk Upload CA marks.'
+      operationId: bulkUploadCAMarks
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token} required A valid Sanctum token.'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  studentId: 1
+                  courseId: '1'
+                  semesterId: '2'
+                  mark: 23
+                  created_at: '2023-07-19T03:19:40.350571Z'
+                  updated_at: '2023-07-19T03:19:40.350577Z'
+                properties:
+                  studentId:
+                    type: integer
+                    example: 1
+                  courseId:
+                    type: string
+                    example: '1'
+                  semesterId:
+                    type: string
+                    example: '2'
+                  mark:
+                    type: integer
+                    example: 23
+                  created_at:
+                    type: string
+                    example: '2023-07-19T03:19:40.350571Z'
+                  updated_at:
+                    type: string
+                    example: '2023-07-19T03:19:40.350577Z'
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - CA
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                courseId:
+                  type: integer
+                  description: ''
+                  example: 4
+                semesterId:
+                  type: integer
+                  description: ''
+                  example: 18
+              required:
+                - courseId
+                - semesterId
+  /api/coordinators:
+    get:
+      summary: ''
+      operationId: getApiCoordinators
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Coordinator Endpoints'
+      security: []
+    post:
+      summary: ''
+      operationId: postApiCoordinators
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Coordinator Endpoints'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                facultyId:
+                  type: integer
+                  description: ''
+                  example: 7
+                departmentId:
+                  type: integer
+                  description: ''
+                  example: 3
+                firstName:
+                  type: string
+                  description: ''
+                  example: sequi
+                lastName:
+                  type: string
+                  description: ''
+                  example: et
+                email:
+                  type: string
+                  description: ''
+                  example: haag.magali@example.com
+                profilePicture:
+                  type: string
+                  format: binary
+                  description: 'Must be an image.'
+              required:
+                - facultyId
+                - departmentId
+                - firstName
+                - lastName
+                - email
+      security: []
+  '/api/coordinators/show/{id}':
+    get:
+      summary: ''
+      operationId: getApiCoordinatorsShowId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Coordinator Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the show.'
+        example: quia
+        required: true
+        schema:
+          type: string
+  '/api/coordinators/update/{id}':
+    post:
+      summary: ''
+      operationId: postApiCoordinatorsUpdateId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Coordinator Endpoints'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                facultyId:
+                  type: integer
+                  description: ''
+                  example: 5
+                departmentId:
+                  type: integer
+                  description: ''
+                  example: 11
+                firstName:
+                  type: string
+                  description: ''
+                  example: vel
+                lastName:
+                  type: string
+                  description: ''
+                  example: aut
+                email:
+                  type: string
+                  description: ''
+                  example: haley09@example.net
+                profilePicture:
+                  type: string
+                  format: binary
+                  description: 'Must be an image.'
+                password:
+                  type: string
+                  description: ''
+                  example: nY8kP2mmwP^aTwz)L
+              required:
+                - facultyId
+                - departmentId
+                - firstName
+                - lastName
+                - email
+                - password
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the update.'
+        example: quibusdam
+        required: true
+        schema:
+          type: string
+  '/api/coordinators/{id}':
+    delete:
+      summary: ''
+      operationId: deleteApiCoordinatorsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Coordinator Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the coordinator.'
+        example: et
+        required: true
+        schema:
+          type: string
+  /api/courses:
+    get:
+      summary: 'Retrieve the list of courses.'
+      operationId: retrieveTheListOfCourses
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token} required A valid Sanctum token.'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: 1
+                  facultyId: 1
+                  userId: 4
+                  semesterId: 1
+                  name: ANALYSIS
+                  courseCode: 'CEF 201'
+                  level: '200'
+                  status: compulsory
+                  creditValue: 4
+                  created_at: '2023-07-12T21:26:29.000000Z'
+                  updated_at: '2023-07-12T21:26:29.000000Z'
+                  lecturer:
+                    id: 4
+                    firstName: Dr
+                    lastName: Chrome
+                    email: chrome@gmail.com
+                    profilePicture: null
+                    status: active
+                    created_at: '2023-07-12T21:26:29.000000Z'
+                    updated_at: '2023-07-12T21:26:29.000000Z'
+                  faculty:
+                    id: 1
+                    name: 'Faculty of Engineering'
+                    created_at: '2023-07-12T21:26:29.000000Z'
+                    updated_at: '2023-07-12T21:26:29.000000Z'
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  facultyId:
+                    type: integer
+                    example: 1
+                  userId:
+                    type: integer
+                    example: 4
+                  semesterId:
+                    type: integer
+                    example: 1
+                  name:
+                    type: string
+                    example: ANALYSIS
+                  courseCode:
+                    type: string
+                    example: 'CEF 201'
+                  level:
+                    type: string
+                    example: '200'
+                  status:
+                    type: string
+                    example: compulsory
+                  creditValue:
+                    type: integer
+                    example: 4
+                  created_at:
+                    type: string
+                    example: '2023-07-12T21:26:29.000000Z'
+                  updated_at:
+                    type: string
+                    example: '2023-07-12T21:26:29.000000Z'
+                  lecturer:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 4
+                      firstName:
+                        type: string
+                        example: Dr
+                      lastName:
+                        type: string
+                        example: Chrome
+                      email:
+                        type: string
+                        example: chrome@gmail.com
+                      profilePicture:
+                        type: string
+                        example: null
+                      status:
+                        type: string
+                        example: active
+                      created_at:
+                        type: string
+                        example: '2023-07-12T21:26:29.000000Z'
+                      updated_at:
+                        type: string
+                        example: '2023-07-12T21:26:29.000000Z'
+                  faculty:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: 'Faculty of Engineering'
+                      created_at:
+                        type: string
+                        example: '2023-07-12T21:26:29.000000Z'
+                      updated_at:
+                        type: string
+                        example: '2023-07-12T21:26:29.000000Z'
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Courses
+    post:
+      summary: ''
+      operationId: postApiCourses
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Courses
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                facultyId:
+                  type: integer
+                  description: ''
+                  example: 12
+                userId:
+                  type: string
+                  description: ''
+                  example: ratione
+                semesterId:
+                  type: integer
+                  description: ''
+                  example: 14
+                name:
+                  type: string
+                  description: ''
+                  example: laborum
+                courseCode:
+                  type: string
+                  description: ''
+                  example: aut
+                level:
+                  type: integer
+                  description: ''
+                  example: 9
+                status:
+                  type: string
+                  description: ''
+                  example: tempore
+                creditValue:
+                  type: integer
+                  description: ''
+                  example: 11
+              required:
+                - facultyId
+                - userId
+                - semesterId
+                - name
+                - courseCode
+                - level
+                - status
+                - creditValue
+      security: []
+  '/api/courses/show/{id}':
+    get:
+      summary: 'Display the specified course.'
+      operationId: displayTheSpecifiedCourse
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token} required A valid Sanctum token.'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: 1
+                  facultyId: 1
+                  userId: 4
+                  semesterId: 1
+                  name: ANALYSIS
+                  courseCode: 'CEF 201'
+                  level: '200'
+                  status: compulsory
+                  creditValue: 4
+                  created_at: '2023-07-12T21:26:29.000000Z'
+                  updated_at: '2023-07-12T21:26:29.000000Z'
+                  user:
+                    id: 4
+                    firstName: Dr
+                    lastName: Chrome
+                    email: chrome@gmail.com
+                    profilePicture: null
+                    status: active
+                    created_at: '2023-07-12T21:26:29.000000Z'
+                    updated_at: '2023-07-12T21:26:29.000000Z'
+                  faculty:
+                    id: 1
+                    name: 'Faculty of Engineering'
+                    created_at: '2023-07-12T21:26:29.000000Z'
+                    updated_at: '2023-07-12T21:26:29.000000Z'
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  facultyId:
+                    type: integer
+                    example: 1
+                  userId:
+                    type: integer
+                    example: 4
+                  semesterId:
+                    type: integer
+                    example: 1
+                  name:
+                    type: string
+                    example: ANALYSIS
+                  courseCode:
+                    type: string
+                    example: 'CEF 201'
+                  level:
+                    type: string
+                    example: '200'
+                  status:
+                    type: string
+                    example: compulsory
+                  creditValue:
+                    type: integer
+                    example: 4
+                  created_at:
+                    type: string
+                    example: '2023-07-12T21:26:29.000000Z'
+                  updated_at:
+                    type: string
+                    example: '2023-07-12T21:26:29.000000Z'
+                  user:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 4
+                      firstName:
+                        type: string
+                        example: Dr
+                      lastName:
+                        type: string
+                        example: Chrome
+                      email:
+                        type: string
+                        example: chrome@gmail.com
+                      profilePicture:
+                        type: string
+                        example: null
+                      status:
+                        type: string
+                        example: active
+                      created_at:
+                        type: string
+                        example: '2023-07-12T21:26:29.000000Z'
+                      updated_at:
+                        type: string
+                        example: '2023-07-12T21:26:29.000000Z'
+                  faculty:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: 'Faculty of Engineering'
+                      created_at:
+                        type: string
+                        example: '2023-07-12T21:26:29.000000Z'
+                      updated_at:
+                        type: string
+                        example: '2023-07-12T21:26:29.000000Z'
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Courses
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the course to display.'
+        example: 2
+        required: true
+        schema:
+          type: integer
+  '/api/courses/update/{id}':
+    post:
+      summary: ''
+      operationId: postApiCoursesUpdateId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Courses
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                facultyId:
+                  type: integer
+                  description: ''
+                  example: 15
+                userId:
+                  type: string
+                  description: ''
+                  example: et
+                semesterId:
+                  type: integer
+                  description: ''
+                  example: 18
+                name:
+                  type: string
+                  description: ''
+                  example: non
+                courseCode:
+                  type: string
+                  description: ''
+                  example: molestias
+                level:
+                  type: integer
+                  description: ''
+                  example: 20
+                status:
+                  type: string
+                  description: ''
+                  example: laboriosam
+                creditValue:
+                  type: integer
+                  description: ''
+                  example: 15
+              required:
+                - facultyId
+                - userId
+                - semesterId
+                - name
+                - courseCode
+                - level
+                - status
+                - creditValue
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the update.'
+        example: illum
+        required: true
+        schema:
+          type: string
+  '/api/courses/{id}':
+    delete:
+      summary: 'Delete a course by ID.'
+      operationId: deleteACourseByID
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token} required A valid Sanctum token.'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Course Deleted Successfully'
+                properties:
+                  message:
+                    type: string
+                    example: 'Course Deleted Successfully'
+      tags:
+        - Courses
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the course to delete.'
+        example: 18
+        required: true
+        schema:
+          type: integer
+  /api/deans:
+    get:
+      summary: ''
+      operationId: getApiDeans
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Dean Endpoints'
+      security: []
+    post:
+      summary: ''
+      operationId: postApiDeans
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Dean Endpoints'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                facultyId:
+                  type: integer
+                  description: ''
+                  example: 19
+                firstName:
+                  type: string
+                  description: ''
+                  example: architecto
+                lastName:
+                  type: string
+                  description: ''
+                  example: optio
+                email:
+                  type: string
+                  description: ''
+                  example: theo18@example.com
+                profilePicture:
+                  type: string
+                  format: binary
+                  description: 'Must be an image.'
+              required:
+                - facultyId
+                - firstName
+                - lastName
+                - email
+      security: []
+  '/api/deans/show/{id}':
+    get:
+      summary: ''
+      operationId: getApiDeansShowId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Dean Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the show.'
+        example: enim
+        required: true
+        schema:
+          type: string
+  '/api/deans/update/{id}':
+    post:
+      summary: ''
+      operationId: postApiDeansUpdateId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Dean Endpoints'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                facultyId:
+                  type: integer
+                  description: ''
+                  example: 9
+                firstName:
+                  type: string
+                  description: ''
+                  example: natus
+                lastName:
+                  type: string
+                  description: ''
+                  example: sed
+                email:
+                  type: string
+                  description: ''
+                  example: lester.mertz@example.net
+                profilePicture:
+                  type: string
+                  format: binary
+                  description: 'Must be an image.'
+                password:
+                  type: string
+                  description: ''
+                  example: 'QM]k?(Cpd>H8cP2J'
+              required:
+                - facultyId
+                - firstName
+                - lastName
+                - email
+                - password
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the update.'
+        example: non
+        required: true
+        schema:
+          type: string
+  '/api/deans/{id}':
+    delete:
+      summary: ''
+      operationId: deleteApiDeansId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Dean Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the dean.'
+        example: repellendus
+        required: true
+        schema:
+          type: string
+  /api/departments:
+    get:
+      summary: ''
+      operationId: getApiDepartments
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Department Endpoints'
+      security: []
+    post:
+      summary: ''
+      operationId: postApiDepartments
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Department Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                facultyId:
+                  type: integer
+                  description: ''
+                  example: 9
+                name:
+                  type: string
+                  description: ''
+                  example: consequatur
+                slug:
+                  type: string
+                  description: ''
+                  example: iusto
+              required:
+                - facultyId
+                - name
+                - slug
+      security: []
+  '/api/departments/show/{id}':
+    get:
+      summary: ''
+      operationId: getApiDepartmentsShowId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Department Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the show.'
+        example: est
+        required: true
+        schema:
+          type: string
+  '/api/departments/update/{id}':
+    post:
+      summary: ''
+      operationId: postApiDepartmentsUpdateId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Department Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                facultyId:
+                  type: integer
+                  description: ''
+                  example: 3
+                name:
+                  type: string
+                  description: ''
+                  example: voluptatem
+                slug:
+                  type: string
+                  description: ''
+                  example: nostrum
+              required:
+                - facultyId
+                - name
+                - slug
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the update.'
+        example: suscipit
+        required: true
+        schema:
+          type: string
+  '/api/departments/{id}':
+    delete:
+      summary: ''
+      operationId: deleteApiDepartmentsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Department Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the department.'
+        example: et
+        required: true
+        schema:
+          type: string
+  /api/freq:
+    get:
+      summary: ''
+      operationId: getApiFreq
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/freq/course-summary:
+    post:
+      summary: ''
+      operationId: postApiFreqCourseSummary
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                semesterId:
+                  type: integer
+                  description: ''
+                  example: 2
+                cc:
+                  type: string
+                  description: ''
+                  example: voluptas
+                cr:
+                  type: integer
+                  description: ''
+                  example: 11
+                courseId:
+                  type: integer
+                  description: ''
+                  example: 1
+              required:
+                - semesterId
+                - cc
+                - cr
+                - courseId
+      security: []
+  /api/examiners:
+    get:
+      summary: ''
+      operationId: getApiExaminers
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Examiner Endpoints'
+      security: []
+    post:
+      summary: ''
+      operationId: postApiExaminers
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Examiner Endpoints'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                facultyId:
+                  type: integer
+                  description: ''
+                  example: 12
+                departmentId:
+                  type: integer
+                  description: ''
+                  example: 11
+                firstName:
+                  type: string
+                  description: ''
+                  example: voluptatem
+                lastName:
+                  type: string
+                  description: ''
+                  example: consequuntur
+                email:
+                  type: string
+                  description: ''
+                  example: brannon16@example.org
+                profilePicture:
+                  type: string
+                  format: binary
+                  description: 'Must be an image.'
+              required:
+                - facultyId
+                - departmentId
+                - firstName
+                - lastName
+                - email
+      security: []
+  '/api/examiners/show/{id}':
+    get:
+      summary: ''
+      operationId: getApiExaminersShowId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Examiner Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the show.'
+        example: omnis
+        required: true
+        schema:
+          type: string
+  '/api/examiners/update/{id}':
+    post:
+      summary: ''
+      operationId: postApiExaminersUpdateId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Examiner Endpoints'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                facultyId:
+                  type: integer
+                  description: ''
+                  example: 7
+                departmentId:
+                  type: integer
+                  description: ''
+                  example: 5
+                firstName:
+                  type: string
+                  description: ''
+                  example: vel
+                lastName:
+                  type: string
+                  description: ''
+                  example: fuga
+                email:
+                  type: string
+                  description: ''
+                  example: jrau@example.com
+                profilePicture:
+                  type: string
+                  format: binary
+                  description: 'Must be an image.'
+              required:
+                - facultyId
+                - departmentId
+                - firstName
+                - lastName
+                - email
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the update.'
+        example: aut
+        required: true
+        schema:
+          type: string
+  '/api/examiners/{id}':
+    delete:
+      summary: ''
+      operationId: deleteApiExaminersId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Examiner Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the examiner.'
+        example: qui
+        required: true
+        schema:
+          type: string
+  /api/gpa:
+    post:
+      summary: 'Store semester Gpa.'
+      operationId: storeSemesterGpa
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token} required A valid Sanctum token.'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"semesterGpa\": 2.9444444444444446,\n \"gpaDetails\": {\n   \"year\": 2023,\n   \"semesterId\": 1,\n   \"studentId\": 1,\n   \"gpa\": 2.94,\n   \"updated_at\": \"2023-07-17T22:46:27.000000Z\",\n   \"created_at\": \"2023-07-17T22:46:27.000000Z\",\n   \"id\": 5\n },\n \"gpaUserInfo\": [\n   {\n     \"id\": 1,\n     \"studentId\": 1,\n     \"semesterId\": 1,\n     \"courseId\": 1,\n     \"mark\": 75,\n     \"grade\": \"B+\",\n     \"gradePoint\": \"3.50\",\n     \"created_at\": \"2023-07-16T07:39:36.000000Z\",\n     \"updated_at\": \"2023-07-16T07:39:36.000000Z\",\n     \"course\": {\n       \"id\": 1,\n       \"facultyId\": 1,\n       \"userId\": 4,\n       \"semesterId\": 1,\n       \"name\": \"ANALYSIS\",\n       \"courseCode\": \"CEF 201\",\n       \"level\": \"200\",\n       \"status\": \"compulsory\",\n       \"creditValue\": 4,\n       \"created_at\": \"2023-07-16T07:25:15.000000Z\",\n       \"updated_at\": \"2023-07-16T07:25:15.000000Z\"\n     },\n     \"semester\": {\n       \"id\": 1,\n       \"semester\": 1,\n       \"year\": 2023,\n       \"created_at\": \"2023-07-16T07:25:15.000000Z\",\n       \"updated_at\": \"2023-07-16T07:25:15.000000Z\"\n     }\n   }"
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'GPA Endpoints'
+  /api/gpa/cumulative:
+    get:
+      summary: 'Store semester Gpa.'
+      operationId: storeSemesterGpa
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token} required A valid Sanctum token.'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n \"cumulativeGpa\": 3.08,\n \"studentSemesterGpas\": {\n   \"1|1|2023\": {\n     \"student\": {\n       \"id\": 1,\n       \"userId\": 3,\n       \"gender\": \"male\",\n       \"status\": \"single\",\n       \"dob\": \"1974-12-08\",\n       \"placeOfBirth\": \"Andyburgh\",\n       \"address\": \"Buea\",\n       \"phone\": \"580.555.3023\",\n       \"region\": null,\n       \"nationalIdentification\": 123456789,\n       \"country\": \"Cameroon\",\n       \"matriculationNumber\": \"FE19A102\",\n       \"level\": \"200\",\n       \"year\": \"1990\",\n       \"program\": \"software\",\n       \"certificateObtained\": \"A level\",\n       \"yearObtained\": \"2007\",\n       \"guardianFirstName\": \"Olivier\",\n       \"guardianLastName\": \"Twist\",\n       \"guardianEmail\": \"ankunding.freida@gmail.com\",\n       \"guardianAddress\": \"Virgilmouth\",\n       \"guardianPhone\": \"+17578547094\",\n       \"created_at\": \"2023-07-16T07:25:15.000000Z\",\n       \"updated_at\": \"2023-07-16T07:25:15.000000Z\"\n     },\n     \"semesterGpa\": 2.94\n   },"
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'GPA Endpoints'
+  /api/hods:
+    get:
+      summary: ''
+      operationId: getApiHods
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'HOD Endpoints'
+      security: []
+    post:
+      summary: ''
+      operationId: postApiHods
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'HOD Endpoints'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                facultyId:
+                  type: integer
+                  description: ''
+                  example: 8
+                departmentId:
+                  type: integer
+                  description: ''
+                  example: 17
+                firstName:
+                  type: string
+                  description: ''
+                  example: odit
+                lastName:
+                  type: string
+                  description: ''
+                  example: ratione
+                email:
+                  type: string
+                  description: ''
+                  example: wconroy@example.com
+                profilePicture:
+                  type: string
+                  format: binary
+                  description: 'Must be an image.'
+              required:
+                - facultyId
+                - departmentId
+                - firstName
+                - lastName
+                - email
+      security: []
+  '/api/hods/show/{id}':
+    get:
+      summary: ''
+      operationId: getApiHodsShowId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'HOD Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the show.'
+        example: dolores
+        required: true
+        schema:
+          type: string
+  '/api/hods/update/{id}':
+    post:
+      summary: ''
+      operationId: postApiHodsUpdateId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'HOD Endpoints'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                facultyId:
+                  type: integer
+                  description: ''
+                  example: 18
+                departmentId:
+                  type: integer
+                  description: ''
+                  example: 13
+                firstName:
+                  type: string
+                  description: ''
+                  example: similique
+                lastName:
+                  type: string
+                  description: ''
+                  example: molestiae
+                email:
+                  type: string
+                  description: ''
+                  example: alberta.wisozk@example.net
+                profilePicture:
+                  type: string
+                  format: binary
+                  description: 'Must be an image.'
+                password:
+                  type: string
+                  description: ''
+                  example: ()dYXs(arxh
+              required:
+                - facultyId
+                - departmentId
+                - firstName
+                - lastName
+                - email
+                - password
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the update.'
+        example: ex
+        required: true
+        schema:
+          type: string
+  '/api/hods/{id}':
+    delete:
+      summary: ''
+      operationId: deleteApiHodsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'HOD Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the hod.'
+        example: eum
+        required: true
+        schema:
+          type: string
+  /api/lecturers:
+    get:
+      summary: ''
+      operationId: getApiLecturers
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Lecturer Endpoints'
+      security: []
+    post:
+      summary: ''
+      operationId: postApiLecturers
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Lecturer Endpoints'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                facultyId:
+                  type: integer
+                  description: ''
+                  example: 5
+                departmentId:
+                  type: integer
+                  description: ''
+                  example: 20
+                firstName:
+                  type: string
+                  description: ''
+                  example: voluptas
+                lastName:
+                  type: string
+                  description: ''
+                  example: placeat
+                email:
+                  type: string
+                  description: ''
+                  example: fbashirian@example.net
+                profilePicture:
+                  type: string
+                  format: binary
+                  description: 'Must be an image.'
+              required:
+                - facultyId
+                - departmentId
+                - firstName
+                - lastName
+                - email
+      security: []
+  '/api/lecturers/show/{id}':
+    get:
+      summary: ''
+      operationId: getApiLecturersShowId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Lecturer Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the show.'
+        example: est
+        required: true
+        schema:
+          type: string
+  '/api/lecturers/update/{id}':
+    post:
+      summary: ''
+      operationId: postApiLecturersUpdateId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Lecturer Endpoints'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                facultyId:
+                  type: integer
+                  description: ''
+                  example: 8
+                departmentId:
+                  type: integer
+                  description: ''
+                  example: 20
+                firstName:
+                  type: string
+                  description: ''
+                  example: architecto
+                lastName:
+                  type: string
+                  description: ''
+                  example: minima
+                email:
+                  type: string
+                  description: ''
+                  example: emccullough@example.org
+                profilePicture:
+                  type: string
+                  format: binary
+                  description: 'Must be an image.'
+                password:
+                  type: string
+                  description: ''
+                  example: I4;V6z9sBymk
+              required:
+                - facultyId
+                - departmentId
+                - firstName
+                - lastName
+                - email
+                - password
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the update.'
+        example: aut
+        required: true
+        schema:
+          type: string
+  '/api/lecturers/{id}':
+    delete:
+      summary: ''
+      operationId: deleteApiLecturersId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Lecturer Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the lecturer.'
+        example: dolorum
+        required: true
+        schema:
+          type: string
+  /api/results:
+    get:
+      summary: ''
+      operationId: getApiResults
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Results
+      security: []
+    post:
+      summary: ''
+      operationId: postApiResults
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Results
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                studentId:
+                  type: integer
+                  description: ''
+                  example: 5
+                semesterId:
+                  type: integer
+                  description: ''
+                  example: 1
+                courseId:
+                  type: integer
+                  description: ''
+                  example: 18
+              required:
+                - studentId
+                - semesterId
+                - courseId
+      security: []
+  '/api/results/show/{id}':
+    get:
+      summary: ''
+      operationId: getApiResultsShowId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Results
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the show.'
+        example: et
+        required: true
+        schema:
+          type: string
+  '/api/results/update/{id}':
+    post:
+      summary: ''
+      operationId: postApiResultsUpdateId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Results
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                studentId:
+                  type: integer
+                  description: ''
+                  example: 8
+                semesterId:
+                  type: integer
+                  description: ''
+                  example: 13
+                courseId:
+                  type: integer
+                  description: ''
+                  example: 6
+              required:
+                - studentId
+                - semesterId
+                - courseId
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the update.'
+        example: mollitia
+        required: true
+        schema:
+          type: string
+  '/api/results/{id}':
+    delete:
+      summary: ''
+      operationId: deleteApiResultsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Results
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the result.'
+        example: soluta
+        required: true
+        schema:
+          type: string
+  /api/stats:
+    get:
+      summary: 'Retrieve the number of courses, users, lecturers and students'
+      operationId: retrieveTheNumberOfCoursesUsersLecturersAndStudents
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token} required A valid Sanctum token.'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  lecturers: 1
+                  students: 1
+                  users: 6
+                  courses: 21
+                properties:
+                  lecturers:
+                    type: integer
+                    example: 1
+                  students:
+                    type: integer
+                    example: 1
+                  users:
+                    type: integer
+                    example: 6
+                  courses:
+                    type: integer
+                    example: 21
+      tags:
+        - Statistics
+      security: []
+  /api/student-codes:
+    get:
+      summary: ''
+      operationId: getApiStudentCodes
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Student Code'
+      security: []
+    post:
+      summary: ''
+      operationId: postApiStudentCodes
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Student Code'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                studentId:
+                  type: integer
+                  description: ''
+                  example: 7
+                semesterId:
+                  type: integer
+                  description: ''
+                  example: 16
+                courseId:
+                  type: integer
+                  description: ''
+                  example: 6
+                studentCode:
+                  type: integer
+                  description: ''
+                  example: 11
+              required:
+                - studentId
+                - semesterId
+                - courseId
+                - studentCode
+      security: []
+  '/api/student-codes/show/{id}':
+    get:
+      summary: ''
+      operationId: getApiStudentCodesShowId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Student Code'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the show.'
+        example: aut
+        required: true
+        schema:
+          type: string
+  '/api/student-codes/update/{id}':
+    post:
+      summary: ''
+      operationId: postApiStudentCodesUpdateId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Student Code'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                studentId:
+                  type: integer
+                  description: ''
+                  example: 13
+                semesterId:
+                  type: integer
+                  description: ''
+                  example: 10
+                courseId:
+                  type: integer
+                  description: ''
+                  example: 16
+              required:
+                - studentId
+                - semesterId
+                - courseId
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the update.'
+        example: ut
+        required: true
+        schema:
+          type: string
+  '/api/student-codes/{id}':
+    delete:
+      summary: ''
+      operationId: deleteApiStudentCodesId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Student Code'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the student code.'
+        example: voluptatem
+        required: true
+        schema:
+          type: string
+  '/api/student-courses/{id}':
+    get:
+      summary: ''
+      operationId: getApiStudentCoursesId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Student Courses Endpoints'
+      security: []
+    post:
+      summary: ''
+      operationId: postApiStudentCoursesId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Student Courses Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                courseId:
+                  type: integer
+                  description: ''
+                  example: 18
+                semesterId:
+                  type: integer
+                  description: ''
+                  example: 2
+              required:
+                - courseId
+                - semesterId
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiStudentCoursesId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Student Courses Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the student course.'
+        example: error
+        required: true
+        schema:
+          type: string
+  '/api/student-courses/update/{id}':
+    post:
+      summary: ''
+      operationId: postApiStudentCoursesUpdateId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Student Courses Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the update.'
+        example: hic
+        required: true
+        schema:
+          type: string
+  /api/students:
+    get:
+      summary: 'Get all students.'
+      operationId: getAllStudents
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token} required A valid Sanctum token.'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  students:
+                    -
+                      id: 1
+                      userId: 3
+                      gender: male
+                      status: single
+                      dob: '1985-02-02'
+                      placeOfBirth: 'Lake Alberto'
+                      address: Buea
+                      phone: +1.720.344.2464
+                      region: null
+                      nationalIdentification: 123456789
+                      country: Cameroon
+                      matriculationNumber: FE19A102
+                      level: '200'
+                      year: '1970'
+                      program: software
+                      certificateObtained: 'A level'
+                      yearObtained: '2018'
+                      guardianFirstName: Olivier
+                      guardianLastName: Twist
+                      guardianEmail: anabelle.hand@cartwright.net
+                      guardianAddress: 'North Orion'
+                      guardianPhone: +1-484-369-2847
+                      created_at: '2023-07-11T12:20:36.000000Z'
+                      updated_at: '2023-07-11T12:20:36.000000Z'
+                      user:
+                        id: 3
+                        firstName: Billy
+                        lastName: Hans
+                        email: billyhans@gmail.com
+                        profilePicture: null
+                        status: active
+                        created_at: '2023-07-11T12:20:36.000000Z'
+                        updated_at: '2023-07-11T12:20:36.000000Z'
+                        faculties:
+                          -
+                            id: 1
+                            name: 'Faculty of Engineering and Technology'
+                            code: 516
+                            slug: FET
+                            about: 'Qui omnis et quibusdam. Vel eos odio aspernatur. Sunt sunt sed beatae earum molestiae.'
+                            created_at: '2023-07-11T12:20:36.000000Z'
+                            updated_at: '2023-07-11T12:20:36.000000Z'
+                            pivot:
+                              userId: 3
+                              facultyId: 1
+                        departments:
+                          -
+                            id: 1
+                            facultyId: 1
+                            name: 'Computer Engineering'
+                            slug: ce
+                            created_at: '2023-07-11T12:20:36.000000Z'
+                            updated_at: '2023-07-11T12:20:36.000000Z'
+                            pivot:
+                              userId: 3
+                              departmentId: 1
+                properties:
+                  students:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        userId: 3
+                        gender: male
+                        status: single
+                        dob: '1985-02-02'
+                        placeOfBirth: 'Lake Alberto'
+                        address: Buea
+                        phone: +1.720.344.2464
+                        region: null
+                        nationalIdentification: 123456789
+                        country: Cameroon
+                        matriculationNumber: FE19A102
+                        level: '200'
+                        year: '1970'
+                        program: software
+                        certificateObtained: 'A level'
+                        yearObtained: '2018'
+                        guardianFirstName: Olivier
+                        guardianLastName: Twist
+                        guardianEmail: anabelle.hand@cartwright.net
+                        guardianAddress: 'North Orion'
+                        guardianPhone: +1-484-369-2847
+                        created_at: '2023-07-11T12:20:36.000000Z'
+                        updated_at: '2023-07-11T12:20:36.000000Z'
+                        user:
+                          id: 3
+                          firstName: Billy
+                          lastName: Hans
+                          email: billyhans@gmail.com
+                          profilePicture: null
+                          status: active
+                          created_at: '2023-07-11T12:20:36.000000Z'
+                          updated_at: '2023-07-11T12:20:36.000000Z'
+                          faculties:
+                            -
+                              id: 1
+                              name: 'Faculty of Engineering and Technology'
+                              code: 516
+                              slug: FET
+                              about: 'Qui omnis et quibusdam. Vel eos odio aspernatur. Sunt sunt sed beatae earum molestiae.'
+                              created_at: '2023-07-11T12:20:36.000000Z'
+                              updated_at: '2023-07-11T12:20:36.000000Z'
+                              pivot:
+                                userId: 3
+                                facultyId: 1
+                          departments:
+                            -
+                              id: 1
+                              facultyId: 1
+                              name: 'Computer Engineering'
+                              slug: ce
+                              created_at: '2023-07-11T12:20:36.000000Z'
+                              updated_at: '2023-07-11T12:20:36.000000Z'
+                              pivot:
+                                userId: 3
+                                departmentId: 1
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        userId:
+                          type: integer
+                          example: 3
+                        gender:
+                          type: string
+                          example: male
+                        status:
+                          type: string
+                          example: single
+                        dob:
+                          type: string
+                          example: '1985-02-02'
+                        placeOfBirth:
+                          type: string
+                          example: 'Lake Alberto'
+                        address:
+                          type: string
+                          example: Buea
+                        phone:
+                          type: string
+                          example: +1.720.344.2464
+                        region:
+                          type: string
+                          example: null
+                        nationalIdentification:
+                          type: integer
+                          example: 123456789
+                        country:
+                          type: string
+                          example: Cameroon
+                        matriculationNumber:
+                          type: string
+                          example: FE19A102
+                        level:
+                          type: string
+                          example: '200'
+                        year:
+                          type: string
+                          example: '1970'
+                        program:
+                          type: string
+                          example: software
+                        certificateObtained:
+                          type: string
+                          example: 'A level'
+                        yearObtained:
+                          type: string
+                          example: '2018'
+                        guardianFirstName:
+                          type: string
+                          example: Olivier
+                        guardianLastName:
+                          type: string
+                          example: Twist
+                        guardianEmail:
+                          type: string
+                          example: anabelle.hand@cartwright.net
+                        guardianAddress:
+                          type: string
+                          example: 'North Orion'
+                        guardianPhone:
+                          type: string
+                          example: +1-484-369-2847
+                        created_at:
+                          type: string
+                          example: '2023-07-11T12:20:36.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2023-07-11T12:20:36.000000Z'
+                        user:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 3
+                            firstName:
+                              type: string
+                              example: Billy
+                            lastName:
+                              type: string
+                              example: Hans
+                            email:
+                              type: string
+                              example: billyhans@gmail.com
+                            profilePicture:
+                              type: string
+                              example: null
+                            status:
+                              type: string
+                              example: active
+                            created_at:
+                              type: string
+                              example: '2023-07-11T12:20:36.000000Z'
+                            updated_at:
+                              type: string
+                              example: '2023-07-11T12:20:36.000000Z'
+                            faculties:
+                              type: array
+                              example:
+                                -
+                                  id: 1
+                                  name: 'Faculty of Engineering and Technology'
+                                  code: 516
+                                  slug: FET
+                                  about: 'Qui omnis et quibusdam. Vel eos odio aspernatur. Sunt sunt sed beatae earum molestiae.'
+                                  created_at: '2023-07-11T12:20:36.000000Z'
+                                  updated_at: '2023-07-11T12:20:36.000000Z'
+                                  pivot:
+                                    userId: 3
+                                    facultyId: 1
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                    example: 1
+                                  name:
+                                    type: string
+                                    example: 'Faculty of Engineering and Technology'
+                                  code:
+                                    type: integer
+                                    example: 516
+                                  slug:
+                                    type: string
+                                    example: FET
+                                  about:
+                                    type: string
+                                    example: 'Qui omnis et quibusdam. Vel eos odio aspernatur. Sunt sunt sed beatae earum molestiae.'
+                                  created_at:
+                                    type: string
+                                    example: '2023-07-11T12:20:36.000000Z'
+                                  updated_at:
+                                    type: string
+                                    example: '2023-07-11T12:20:36.000000Z'
+                                  pivot:
+                                    type: object
+                                    properties:
+                                      userId: { type: integer, example: 3 }
+                                      facultyId: { type: integer, example: 1 }
+                            departments:
+                              type: array
+                              example:
+                                -
+                                  id: 1
+                                  facultyId: 1
+                                  name: 'Computer Engineering'
+                                  slug: ce
+                                  created_at: '2023-07-11T12:20:36.000000Z'
+                                  updated_at: '2023-07-11T12:20:36.000000Z'
+                                  pivot:
+                                    userId: 3
+                                    departmentId: 1
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                    example: 1
+                                  facultyId:
+                                    type: integer
+                                    example: 1
+                                  name:
+                                    type: string
+                                    example: 'Computer Engineering'
+                                  slug:
+                                    type: string
+                                    example: ce
+                                  created_at:
+                                    type: string
+                                    example: '2023-07-11T12:20:36.000000Z'
+                                  updated_at:
+                                    type: string
+                                    example: '2023-07-11T12:20:36.000000Z'
+                                  pivot:
+                                    type: object
+                                    properties:
+                                      userId: { type: integer, example: 3 }
+                                      departmentId: { type: integer, example: 1 }
+      tags:
+        - 'Student Endpoints'
+      security: []
+    post:
+      summary: 'Store a new student.'
+      operationId: storeANewStudent
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token} required A valid Sanctum token.'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: 1
+                  firstName: John
+                  lastName: Doe
+                  email: johndoe@example.com
+                  profilePicture: 'http://example.com/profile.jpg'
+                  created_at: '2023-07-10T12:00:00Z'
+                  updated_at: '2023-07-10T12:00:00Z'
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  firstName:
+                    type: string
+                    example: John
+                  lastName:
+                    type: string
+                    example: Doe
+                  email:
+                    type: string
+                    example: johndoe@example.com
+                  profilePicture:
+                    type: string
+                    example: 'http://example.com/profile.jpg'
+                  created_at:
+                    type: string
+                    example: '2023-07-10T12:00:00Z'
+                  updated_at:
+                    type: string
+                    example: '2023-07-10T12:00:00Z'
+      tags:
+        - 'Student Endpoints'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                facultyId:
+                  type: integer
+                  description: "The ID of the student's faculty."
+                  example: 6
+                departmentId:
+                  type: integer
+                  description: "The ID of the student's department."
+                  example: 17
+                firstName:
+                  type: string
+                  description: 'The first name of the student.'
+                  example: quo
+                lastName:
+                  type: string
+                  description: 'The last name of the student.'
+                  example: dolor
+                email:
+                  type: string
+                  description: 'The email address of the student.'
+                  example: muller.bud@example.net
+                profilePicture:
+                  type: string
+                  format: binary
+                  description: 'Must be an image.'
+                profile_picture:
+                  type: string
+                  format: binary
+                  description: 'A profile picture for the student.'
+                gender:
+                  type: string
+                  description: 'The gender of the student.'
+                  example: odit
+                status:
+                  type: string
+                  description: 'The status of the student.'
+                  example: iure
+                dob:
+                  type: date
+                  description: 'The date of birth of the student.'
+                  example: mollitia
+                placeOfBirth:
+                  type: string
+                  description: 'The place of birth of the student.'
+                  example: incidunt
+                address:
+                  type: string
+                  description: 'The address of the student.'
+                  example: totam
+                phone:
+                  type: string
+                  description: 'The phone number of the student.'
+                  example: vitae
+                region:
+                  type: string
+                  description: 'nullable The region of the student.'
+                  example: non
+                nationalIdentification:
+                  type: string
+                  description: 'The national identification number of the student.'
+                  example: et
+                country:
+                  type: string
+                  description: 'The country of the student.'
+                  example: iure
+                matriculationNumber:
+                  type: string
+                  description: 'The matriculation number of the student.'
+                  example: temporibus
+                level:
+                  type: string
+                  description: 'The level of the student.'
+                  example: suscipit
+                year:
+                  type: integer
+                  description: 'The year of the student.'
+                  example: 7
+                program:
+                  type: string
+                  description: 'The program of the student.'
+                  example: est
+                certificateObtained:
+                  type: string
+                  description: 'The certificate obtained by the student.'
+                  example: ab
+                yearObtained:
+                  type: integer
+                  description: 'The year the certificate was obtained by the student.'
+                  example: 20
+                guardianFirstName:
+                  type: string
+                  description: "The first name of the student's guardian."
+                  example: quaerat
+                guardianLastName:
+                  type: string
+                  description: "The last name of the student's guardian."
+                  example: illum
+                guardianEmail:
+                  type: string
+                  description: "The email address of the student's guardian."
+                  example: coby91@example.com
+                guardianAddress:
+                  type: string
+                  description: "The address of the student's guardian."
+                  example: consequatur
+                guardianPhone:
+                  type: string
+                  description: "The phone number of the student's guardian."
+                  example: aliquam
+              required:
+                - facultyId
+                - departmentId
+                - firstName
+                - lastName
+                - email
+                - gender
+                - status
+                - dob
+                - placeOfBirth
+                - address
+                - phone
+                - nationalIdentification
+                - country
+                - matriculationNumber
+                - level
+                - year
+                - program
+                - certificateObtained
+                - yearObtained
+                - guardianFirstName
+                - guardianLastName
+                - guardianEmail
+                - guardianAddress
+                - guardianPhone
+      security: []
+  '/api/students/show/{id}':
+    get:
+      summary: 'Display the specified student with their associated user information, faculties, and departments.'
+      operationId: displayTheSpecifiedStudentWithTheirAssociatedUserInformationFacultiesAndDepartments
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token} required A valid Sanctum token.'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n         \"student\": [\n        {\n            \"id\": 1,\n            \"userId\": 3,\n             \"gender\": \"male\",\n             \"status\": \"single\",\n             \"dob\": \"1985-02-02\",\n             \"placeOfBirth\": \"Lake Alberto\",\n             \"address\": \"Buea\",\n             \"phone\": \"+1.720.344.2464\",\n             \"region\": null,\n             \"nationalIdentification\": 123456789,\n             \"country\": \"Cameroon\",\n             \"matriculationNumber\": \"FE19A102\",\n             \"level\": \"200\",\n             \"year\": \"1970\",\n             \"program\": \"software\",\n             \"certificateObtained\": \"A level\",\n             \"yearObtained\": \"2018\",\n             \"guardianFirstName\": \"Olivier\",\n             \"guardianLastName\": \"Twist\",\n             \"guardianEmail\": \"anabelle.hand@cartwright.net\",\n             \"guardianAddress\": \"North Orion\",\n             \"guardianPhone\": \"+1-484-369-2847\",\n             \"created_at\": \"2023-07-11T12:20:36.000000Z\",\n             \"updated_at\": \"2023-07-11T12:20:36.000000Z\",\n             \"user\": {\n                 \"id\": 3,\n                 \"firstName\": \"Billy\",\n                 \"lastName\": \"Hans\",\n                 \"email\": \"billyhans@gmail.com\",\n                 \"profilePicture\": null,\n                 \"status\": \"active\",\n                 \"created_at\": \"2023-07-11T12:20:36.000000Z\",\n                 \"updated_at\": \"2023-07-11T12:20:36.000000Z\",\n             \"faculties\": [\n               {\n                 \"id\": 1,\n                 \"name\": \"Faculty of Engineering and Technology\",\n                 \"code\": 516,\n                 \"slug\": \"FET\",\n                 \"about\": \"Qui omnis et quibusdam. Vel eos odio aspernatur. Sunt sunt sed beatae earum molestiae.\",\n                 \"created_at\": \"2023-07-11T12:20:36.000000Z\",\n                 \"updated_at\": \"2023-07-11T12:20:36.000000Z\",\n                 \"pivot\": {\n                   \"userId\": 3,\n                   \"facultyId\": 1\n                 }\n               }\n             ],\n             \"departments\": [\n             {\n                 \"id\": 1,\n                 \"facultyId\": 1,\n                 \"name\": \"Computer Engineering\",\n                 \"slug\": \"ce\",\n                 \"created_at\": \"2023-07-11T12:20:36.000000Z\",\n                 \"updated_at\": \"2023-07-11T12:20:36.000000Z\",\n                 \"pivot\": {\n                 \"userId\": 3,\n                 \"departmentId\": 1\n                 }\n             }\n           ]\n         }\n       }\n    ]\n  },\n  \"role\": \"student\"\n}"
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The specified student does not exist.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The specified student does not exist.'
+      tags:
+        - 'Student Endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the student to retrieve.'
+        example: laboriosam
+        required: true
+        schema:
+          type: string
+  '/api/students/update/{id}':
+    post:
+      summary: 'Update student.'
+      operationId: updateStudent
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token} required A valid Sanctum token.'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: 1
+                  firstName: John
+                  lastName: Doe
+                  email: johndoe@example.com
+                  profilePicture: 'http://example.com/profile.jpg'
+                  created_at: '2023-07-10T12:00:00Z'
+                  updated_at: '2023-07-10T12:00:00Z'
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  firstName:
+                    type: string
+                    example: John
+                  lastName:
+                    type: string
+                    example: Doe
+                  email:
+                    type: string
+                    example: johndoe@example.com
+                  profilePicture:
+                    type: string
+                    example: 'http://example.com/profile.jpg'
+                  created_at:
+                    type: string
+                    example: '2023-07-10T12:00:00Z'
+                  updated_at:
+                    type: string
+                    example: '2023-07-10T12:00:00Z'
+      tags:
+        - 'Student Endpoints'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                facultyId:
+                  type: integer
+                  description: "The ID of the student's faculty."
+                  example: 14
+                departmentId:
+                  type: integer
+                  description: "The ID of the student's department."
+                  example: 6
+                firstName:
+                  type: string
+                  description: 'The first name of the student.'
+                  example: illo
+                lastName:
+                  type: string
+                  description: 'The last name of the student.'
+                  example: et
+                email:
+                  type: string
+                  description: 'The email address of the student.'
+                  example: qbrakus@example.org
+                profilePicture:
+                  type: string
+                  format: binary
+                  description: 'Must be an image.'
+                profile_picture:
+                  type: string
+                  format: binary
+                  description: 'A profile picture for the student.'
+                gender:
+                  type: string
+                  description: 'The gender of the student.'
+                  example: rerum
+                status:
+                  type: string
+                  description: 'The status of the student.'
+                  example: nulla
+                dob:
+                  type: date
+                  description: 'The date of birth of the student.'
+                  example: expedita
+                placeOfBirth:
+                  type: string
+                  description: 'The place of birth of the student.'
+                  example: voluptas
+                address:
+                  type: string
+                  description: 'The address of the student.'
+                  example: perferendis
+                phone:
+                  type: string
+                  description: 'The phone number of the student.'
+                  example: et
+                region:
+                  type: string
+                  description: 'nullable The region of the student.'
+                  example: voluptate
+                nationalIdentification:
+                  type: string
+                  description: 'The national identification number of the student.'
+                  example: voluptas
+                country:
+                  type: string
+                  description: 'The country of the student.'
+                  example: molestias
+                matriculationNumber:
+                  type: string
+                  description: 'The matriculation number of the student.'
+                  example: voluptatum
+                level:
+                  type: string
+                  description: 'The level of the student.'
+                  example: voluptas
+                year:
+                  type: integer
+                  description: 'The year of the student.'
+                  example: 12
+                program:
+                  type: string
+                  description: 'The program of the student.'
+                  example: quis
+                certificateObtained:
+                  type: string
+                  description: 'The certificate obtained by the student.'
+                  example: eius
+                yearObtained:
+                  type: integer
+                  description: 'The year the certificate was obtained by the student.'
+                  example: 4
+                guardianFirstName:
+                  type: string
+                  description: "The first name of the student's guardian."
+                  example: adipisci
+                guardianLastName:
+                  type: string
+                  description: "The last name of the student's guardian."
+                  example: ipsum
+                guardianEmail:
+                  type: string
+                  description: "The email address of the student's guardian."
+                  example: murazik.avery@example.com
+                guardianAddress:
+                  type: string
+                  description: "The address of the student's guardian."
+                  example: atque
+                guardianPhone:
+                  type: string
+                  description: "The phone number of the student's guardian."
+                  example: ut
+              required:
+                - facultyId
+                - departmentId
+                - firstName
+                - lastName
+                - email
+                - gender
+                - status
+                - dob
+                - placeOfBirth
+                - address
+                - phone
+                - nationalIdentification
+                - country
+                - matriculationNumber
+                - level
+                - year
+                - program
+                - certificateObtained
+                - yearObtained
+                - guardianFirstName
+                - guardianLastName
+                - guardianEmail
+                - guardianAddress
+                - guardianPhone
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the update.'
+        example: inventore
+        required: true
+        schema:
+          type: string
+  '/api/students/{id}':
+    delete:
+      summary: 'Delete a student by ID.'
+      operationId: deleteAStudentByID
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token} required A valid Sanctum token.'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Student Deleted Successfully'
+                properties:
+                  message:
+                    type: string
+                    example: 'Student Deleted Successfully'
+      tags:
+        - 'Student Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the student to delete.'
+        example: 4
+        required: true
+        schema:
+          type: integer
+  /api/student-code-marks:
+    get:
+      summary: ''
+      operationId: getApiStudentCodeMarks
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Student code marks'
+      security: []
+    post:
+      summary: ''
+      operationId: postApiStudentCodeMarks
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Student code marks'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                studentCodeId:
+                  type: integer
+                  description: ''
+                  example: 4
+                mark:
+                  type: integer
+                  description: ''
+                  example: 16
+              required:
+                - studentCodeId
+                - mark
+      security: []
+  '/api/student-code-marks/show/{id}':
+    get:
+      summary: ''
+      operationId: getApiStudentCodeMarksShowId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Student code marks'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the show.'
+        example: culpa
+        required: true
+        schema:
+          type: string
+  '/api/student-code-marks/update/{id}':
+    post:
+      summary: ''
+      operationId: postApiStudentCodeMarksUpdateId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Student code marks'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                studentCodeId:
+                  type: integer
+                  description: ''
+                  example: 5
+                mark:
+                  type: integer
+                  description: ''
+                  example: 11
+              required:
+                - studentCodeId
+                - mark
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the update.'
+        example: eius
+        required: true
+        schema:
+          type: string
+  '/api/student-code-marks/{id}':
+    delete:
+      summary: ''
+      operationId: deleteApiStudentCodeMarksId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Student code marks'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the student code mark.'
+        example: doloremque
+        required: true
+        schema:
+          type: string
+  /api/student-code-marks/bulk-upload:
+    post:
+      summary: 'Bulk Upload Exam marks.'
+      operationId: bulkUploadExamMarks
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token} required A valid Sanctum token.'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  studentCodeId: 1
+                  mark: 50
+                  created_at: '2023-07-19T05:21:11.840620Z'
+                  updated_at: '2023-07-19T05:21:11.840627Z'
+                properties:
+                  studentCodeId:
+                    type: integer
+                    example: 1
+                  mark:
+                    type: integer
+                    example: 50
+                  created_at:
+                    type: string
+                    example: '2023-07-19T05:21:11.840620Z'
+                  updated_at:
+                    type: string
+                    example: '2023-07-19T05:21:11.840627Z'
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Student code marks'
+  /api/support-staffs:
+    get:
+      summary: ''
+      operationId: getApiSupportStaffs
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Support Staff'
+      security: []
+    post:
+      summary: ''
+      operationId: postApiSupportStaffs
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Support Staff'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                facultyId:
+                  type: integer
+                  description: ''
+                  example: 19
+                departmentId:
+                  type: integer
+                  description: ''
+                  example: 16
+                firstName:
+                  type: string
+                  description: ''
+                  example: ab
+                lastName:
+                  type: string
+                  description: ''
+                  example: quibusdam
+                email:
+                  type: string
+                  description: ''
+                  example: adams.garnett@example.net
+                profilePicture:
+                  type: string
+                  format: binary
+                  description: 'Must be an image.'
+              required:
+                - facultyId
+                - departmentId
+                - firstName
+                - lastName
+                - email
+      security: []
+  '/api/support-staffs/show/{id}':
+    get:
+      summary: ''
+      operationId: getApiSupportStaffsShowId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - 'Support Staff'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the show.'
+        example: est
+        required: true
+        schema:
+          type: string
+  '/api/support-staffs/update/{id}':
+    post:
+      summary: ''
+      operationId: postApiSupportStaffsUpdateId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Support Staff'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                facultyId:
+                  type: integer
+                  description: ''
+                  example: 18
+                departmentId:
+                  type: integer
+                  description: ''
+                  example: 19
+                firstName:
+                  type: string
+                  description: ''
+                  example: quod
+                lastName:
+                  type: string
+                  description: ''
+                  example: sequi
+                email:
+                  type: string
+                  description: ''
+                  example: grimes.dagmar@example.net
+                password:
+                  type: string
+                  description: ''
+                  example: '[Z\ZS)LCE~oy@,^l'
+                profilePicture:
+                  type: string
+                  format: binary
+                  description: 'Must be an image.'
+              required:
+                - facultyId
+                - departmentId
+                - firstName
+                - lastName
+                - email
+                - password
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the update.'
+        example: eos
+        required: true
+        schema:
+          type: string
+  '/api/support-staffs/{id}':
+    delete:
+      summary: ''
+      operationId: deleteApiSupportStaffsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Support Staff'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the support staff.'
+        example: magnam
+        required: true
+        schema:
+          type: string
+  /api/users:
+    get:
+      summary: "Retrieve a list of all users with the 'admin', 'dean', 'hod', 'coordinator', 'lecturer', 'examiner', or 'supportStaff' role."
+      operationId: retrieveAListOfAllUsersWithTheadmindeanhodcoordinatorlecturerexaminerOrsupportStaffRole
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token} required A valid Sanctum token.'
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n    \"users\": [\n        {\n          \"id\": 2,\n          \"firstName\": \"John\",\n          \"lastName\": \"Doe\",\n          \"email\": \"johndoe@example.com\",\n          \"profilePicture\": null,\n          \"created_at\": \"2023-07-10T12:00:00Z\",\n          \"updated_at\": \"2023-07-10T12:00:00Z\"\n          \"faculties\": [\n             {\n               \"id\": 1,\n               \"name\": \"Faculty of Engineering and Technology\",\n               \"code\": 516,\n               \"slug\": \"FET\",\n               \"about\": \"Qui omnis et quibusdam. Vel eos odio aspernatur. Sunt sunt sed beatae earum molestiae.\",\n               \"created_at\": \"2023-07-10T12:00:00Z\",\n               \"updated_at\": \"2023-07-10T12:00:00Z\",\n               \"pivot\" : {\n                  \"userId\": 2,\n                  \"facultyId: 1,\n                }\n              }\n            ],\n           \"departments\": [\n             {\n               \"id\": 1,\n               \"name\": \"Computer Engineering\",\n               \"slug\": \"ce\",\n               \"created_at\": \"2023-07-10T12:00:00Z\",\n               \"updated_at\": \"2023-07-10T12:00:00Z\",\n               \"pivot\" : {\n                 \"userId\": 2,\n                 \"facultyId: 1,\n                }\n              }\n           ],\n        },\n      ]\n}"
+      tags:
+        - Users
+      security: []
+tags:
+  -
+    name: 'Admin Activities'
+    description: "\nAPI endpoints of admin main functions"
+  -
+    name: Authentication
+    description: "\nAPI auth endpoints"
+  -
+    name: CA
+    description: "\nCA marks endpoints"
+  -
+    name: 'Coordinator Endpoints'
+    description: "\nAPI endpoints of the coordinator"
+  -
+    name: Courses
+    description: "\n\nAPI endpoints for courses"
+  -
+    name: 'Dean Endpoints'
+    description: "\n\nAPI endpoints for dean"
+  -
+    name: 'Department Endpoints'
+    description: "\n\nAPI endpoints for departments"
+  -
+    name: Endpoints
+    description: ''
+  -
+    name: 'Examiner Endpoints'
+    description: "\n\nAPI endpoints for examiners"
+  -
+    name: 'GPA Endpoints'
+    description: "\n\nAPI endpoints for GPA"
+  -
+    name: 'HOD Endpoints'
+    description: "\n\nAPI endpoints for hod"
+  -
+    name: 'Lecturer Endpoints'
+    description: "\n\nAPI endpoints for lecturers"
+  -
+    name: Results
+    description: "\nResult endpoints"
+  -
+    name: Statistics
+    description: ''
+  -
+    name: 'Student Code'
+    description: "\nStudent code endpoints"
+  -
+    name: 'Student Courses Endpoints'
+    description: "\n\nAPI endpoints for student courses"
+  -
+    name: 'Student Endpoints'
+    description: "\n\nAPI endpoints for students"
+  -
+    name: 'Student code marks'
+    description: "\nAPI Student code marks endpoints"
+  -
+    name: 'Support Staff'
+    description: "\nSupport Staff marks endpoints"
+  -
+    name: Users
+    description: ''

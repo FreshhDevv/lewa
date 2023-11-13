@@ -1,0 +1,271 @@
+name: 'Admin Activities'
+description: |-
+
+  API endpoints of admin main functions
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/faculties
+    metadata:
+      groupName: 'Admin Activities'
+      groupDescription: |-
+
+        API endpoints of admin main functions
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display faculties'
+      description: 'Gets a list of all faculties in the school'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/faculties
+    metadata:
+      groupName: 'Admin Activities'
+      groupDescription: |-
+
+        API endpoints of admin main functions
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: est
+        type: string
+        custom: []
+      code:
+        name: code
+        description: ''
+        required: true
+        example: 11
+        type: integer
+        custom: []
+      slug:
+        name: slug
+        description: ''
+        required: true
+        example: reiciendis
+        type: string
+        custom: []
+      about:
+        name: about
+        description: ''
+        required: true
+        example: quasi
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: est
+      code: 11
+      slug: reiciendis
+      about: quasi
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/faculties/show/{id}'
+    metadata:
+      groupName: 'Admin Activities'
+      groupDescription: |-
+
+        API endpoints of admin main functions
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the show.'
+        required: true
+        example: omnis
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: omnis
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/faculties/update/{id}'
+    metadata:
+      groupName: 'Admin Activities'
+      groupDescription: |-
+
+        API endpoints of admin main functions
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the update.'
+        required: true
+        example: exercitationem
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: exercitationem
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: odio
+        type: string
+        custom: []
+      code:
+        name: code
+        description: ''
+        required: true
+        example: 3
+        type: integer
+        custom: []
+      slug:
+        name: slug
+        description: ''
+        required: true
+        example: ut
+        type: string
+        custom: []
+      about:
+        name: about
+        description: ''
+        required: true
+        example: molestiae
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: odio
+      code: 3
+      slug: ut
+      about: molestiae
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/faculties/{id}'
+    metadata:
+      groupName: 'Admin Activities'
+      groupDescription: |-
+
+        API endpoints of admin main functions
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the faculty.'
+        required: true
+        example: soluta
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: soluta
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

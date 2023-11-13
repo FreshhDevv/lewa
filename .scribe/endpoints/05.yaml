@@ -1,0 +1,301 @@
+name: 'Dean Endpoints'
+description: |-
+
+
+  API endpoints for dean
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/deans
+    metadata:
+      groupName: 'Dean Endpoints'
+      groupDescription: |-
+
+
+        API endpoints for dean
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/deans
+    metadata:
+      groupName: 'Dean Endpoints'
+      groupDescription: |-
+
+
+        API endpoints for dean
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      facultyId:
+        name: facultyId
+        description: ''
+        required: true
+        example: 19
+        type: integer
+        custom: []
+      firstName:
+        name: firstName
+        description: ''
+        required: true
+        example: architecto
+        type: string
+        custom: []
+      lastName:
+        name: lastName
+        description: ''
+        required: true
+        example: optio
+        type: string
+        custom: []
+      email:
+        name: email
+        description: ''
+        required: true
+        example: theo18@example.com
+        type: string
+        custom: []
+      profilePicture:
+        name: profilePicture
+        description: 'Must be an image.'
+        required: false
+        example: null
+        type: file
+        custom: []
+    cleanBodyParameters:
+      facultyId: 19
+      firstName: architecto
+      lastName: optio
+      email: theo18@example.com
+    fileParameters:
+      profilePicture: null
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/deans/show/{id}'
+    metadata:
+      groupName: 'Dean Endpoints'
+      groupDescription: |-
+
+
+        API endpoints for dean
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the show.'
+        required: true
+        example: enim
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: enim
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/deans/update/{id}'
+    metadata:
+      groupName: 'Dean Endpoints'
+      groupDescription: |-
+
+
+        API endpoints for dean
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the update.'
+        required: true
+        example: non
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: non
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      facultyId:
+        name: facultyId
+        description: ''
+        required: true
+        example: 9
+        type: integer
+        custom: []
+      firstName:
+        name: firstName
+        description: ''
+        required: true
+        example: natus
+        type: string
+        custom: []
+      lastName:
+        name: lastName
+        description: ''
+        required: true
+        example: sed
+        type: string
+        custom: []
+      email:
+        name: email
+        description: ''
+        required: true
+        example: lester.mertz@example.net
+        type: string
+        custom: []
+      profilePicture:
+        name: profilePicture
+        description: 'Must be an image.'
+        required: false
+        example: null
+        type: file
+        custom: []
+      password:
+        name: password
+        description: ''
+        required: true
+        example: 'QM]k?(Cpd>H8cP2J'
+        type: string
+        custom: []
+    cleanBodyParameters:
+      facultyId: 9
+      firstName: natus
+      lastName: sed
+      email: lester.mertz@example.net
+      password: 'QM]k?(Cpd>H8cP2J'
+    fileParameters:
+      profilePicture: null
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/deans/{id}'
+    metadata:
+      groupName: 'Dean Endpoints'
+      groupDescription: |-
+
+
+        API endpoints for dean
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the dean.'
+        required: true
+        example: repellendus
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: repellendus
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

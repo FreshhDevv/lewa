@@ -1,0 +1,47 @@
+name: Statistics
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/stats
+    metadata:
+      groupName: Statistics
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Retrieve the number of courses, users, lecturers and students'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: 'Bearer {token} required A valid Sanctum token.'
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+
+            "lecturers": 1,
+            "students": 1,
+            "users": 6,
+            "courses": 21
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

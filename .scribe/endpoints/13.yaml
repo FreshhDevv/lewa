@@ -1,0 +1,359 @@
+name: CA
+description: |-
+
+  CA marks endpoints
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/ca-marks
+    metadata:
+      groupName: CA
+      groupDescription: |-
+
+        CA marks endpoints
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get All CA marks.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: 'Bearer {token} required A valid Sanctum token.'
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+             "id": 1,
+             "studentId": 1,
+             "courseId": 1,
+             "semesterId": 1,
+             "mark": 25,
+             "created_at": "2023-07-16T07:30:16.000000Z",
+             "updated_at": "2023-07-16T07:30:16.000000Z"
+           }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 401
+        content: |-
+          {
+               "message": "Unauthenticated."
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/ca-marks
+    metadata:
+      groupName: CA
+      groupDescription: |-
+
+        CA marks endpoints
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      studentId:
+        name: studentId
+        description: ''
+        required: true
+        example: 4
+        type: integer
+        custom: []
+      courseId:
+        name: courseId
+        description: ''
+        required: true
+        example: 14
+        type: integer
+        custom: []
+      semesterId:
+        name: semesterId
+        description: ''
+        required: true
+        example: 13
+        type: integer
+        custom: []
+      mark:
+        name: mark
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      studentId: 4
+      courseId: 14
+      semesterId: 13
+      mark: 17
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/ca-marks/show/{id}'
+    metadata:
+      groupName: CA
+      groupDescription: |-
+
+        CA marks endpoints
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the show.'
+        required: true
+        example: est
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: est
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/ca-marks/update/{id}'
+    metadata:
+      groupName: CA
+      groupDescription: |-
+
+        CA marks endpoints
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the update.'
+        required: true
+        example: a
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: a
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      studentId:
+        name: studentId
+        description: ''
+        required: true
+        example: 8
+        type: integer
+        custom: []
+      courseId:
+        name: courseId
+        description: ''
+        required: true
+        example: 7
+        type: integer
+        custom: []
+      semesterId:
+        name: semesterId
+        description: ''
+        required: true
+        example: 14
+        type: integer
+        custom: []
+      mark:
+        name: mark
+        description: ''
+        required: true
+        example: 3
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      studentId: 8
+      courseId: 7
+      semesterId: 14
+      mark: 3
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/ca-marks/{id}'
+    metadata:
+      groupName: CA
+      groupDescription: |-
+
+        CA marks endpoints
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the ca mark.'
+        required: true
+        example: quia
+        type: string
+        custom: []
+    cleanUrlParameters:
+      id: quia
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/ca-marks/bulk-upload
+    metadata:
+      groupName: CA
+      groupDescription: |-
+
+        CA marks endpoints
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Bulk Upload CA marks.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: 'Bearer {token} required A valid Sanctum token.'
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      courseId:
+        name: courseId
+        description: ''
+        required: true
+        example: 4
+        type: integer
+        custom: []
+      semesterId:
+        name: semesterId
+        description: ''
+        required: true
+        example: 18
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      courseId: 4
+      semesterId: 18
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+             "studentId": 1,
+             "courseId": "1",
+             "semesterId": "2",
+             "mark": 23,
+             "created_at": "2023-07-19T03:19:40.350571Z",
+             "updated_at": "2023-07-19T03:19:40.350577Z"
+           }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 401
+        content: |-
+          {
+               "message": "Unauthenticated."
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
