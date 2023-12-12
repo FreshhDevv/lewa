@@ -8,7 +8,7 @@ It is a software that is aimed at helping universities better manage recording o
 - Multi-tenancy: which permits separation of data between different faculties.
 - Exam script encoding.
 - It is able to match encoded scripts to CA mark scripts and match up the marks.
-- Bulk upload of CA and exam marks which are then mathced with their corresponding script code, matricule and mark.
+- Bulk upload of CA and exam marks which are then matched with their corresponding script code, matricule and mark.
 - GPA calculation.
 - Semester statistics form generation.
 
