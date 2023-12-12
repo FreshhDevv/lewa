@@ -1,8 +1,16 @@
-<h1 align="center">Restat API</h1>
+<h1 align="center">Lewa API</h1>
 
-## About Restat
+## About Lewa
 
-It is a software that is aimed at helping FET better manage recording of marks and grade generation of results during CAs and Exams.
+It is a software that is aimed at helping universities better manage recording of marks and grade generation of results during CAs and Exams.
+
+## Features of Lewa
+- Multi-tenancy: which permits separation of data between different faculties.
+- Exam script encoding.
+- It is able to match encoded scripts to CA mark scripts and match up the marks.
+- Bulk upload of CA and exam marks which are then mathced with their corresponding script code, matricule and mark.
+- GPA calculation.
+- Semester statistics form generation.
 
 ## Prerequisites to running this project.
     
